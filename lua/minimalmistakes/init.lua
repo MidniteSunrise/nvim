@@ -1,25 +1,26 @@
--- Dracula color scheme
+-- MinimalMistakes color scheme
 
 local M = {}
 
 local DEFAULT_COLORS = {
-  bg = "#282A36",
-  fg = "#F8F8F2",
-  selection = "#44475A",
-  comment = "#6272A4",
-  red = "#FF5555",
-  orange = "#FFB86C",
-  yellow = "#F1FA8C",
-  green = "#50fa7b",
-  purple = "#BD93F9",
-  cyan = "#8BE9FD",
-  pink = "#FF79C6",
-  bright_red = "#FF6E6E",
-  bright_green = "#69FF94",
-  bright_yellow = "#FFFFA5",
-  bright_blue = "#D6ACFF",
-  bright_magenta = "#FF92DF",
-  bright_cyan = "#A4FFFF",
+  bg = "#283036",
+  fg = "#e5e9f0",
+  selection = "#434c5e",
+  comment = "#81a1c1",
+  red = "#ff5959",
+  orange = "#ff9c59",
+  yellow = "#ffff59",
+  green = "#59ff59",
+  purple = "#9059ff",
+  cyan = "#59fff9",
+  pink = "#ff59f9",
+  bright_red = "#ffa6a6",
+  bright_orange = "#ffc9a6",
+  bright_yellow = "#ffffa6",
+  bright_green = "#a6ffa6",
+  bright_purple = "#c5a6ff",
+  bright_cyan = "#a6fffc",
+  bright_pink = "#ffa6fc",
   bright_white = "#FFFFFF",
   menu = "#21222C",
   visual = "#3E4452",
@@ -29,7 +30,7 @@ local DEFAULT_COLORS = {
   black = "#191A21",
 }
 
-local colors = vim.tbl_deep_extend('force', DEFAULT_COLORS, vim.g.dracula_colors or {})
+local colors = vim.tbl_deep_extend('force', DEFAULT_COLORS, vim.g.minimalmistakes_colors or {})
 
 M.colors = function()
   return colors
@@ -48,8 +49,8 @@ M.apply_term_colors = function(colors)
 	vim.g.terminal_color_9 = colors.bright_red
 	vim.g.terminal_color_10 = colors.bright_green
 	vim.g.terminal_color_11 = colors.bright_yellow
-	vim.g.terminal_color_12 = colors.bright_blue
-	vim.g.terminal_color_13 = colors.bright_magenta
+	vim.g.terminal_color_12 = colors.bright_purple
+	vim.g.terminal_color_13 = colors.bright_pink
 	vim.g.terminal_color_14 = colors.bright_cyan
 	vim.g.terminal_color_15 = colors.bright_white
 	vim.g.terminal_color_background = colors.bg
@@ -58,7 +59,7 @@ end
 
 M.apply = function()
 
-    local isItalic = vim.g.dracula_italic_comment == true
+    local isItalic = vim.g.minimalmistakes_italic_comment == true
 
 	local highlight = function(group, fg, bg, attr, sp)
 		fg = fg and "guifg=" .. fg or "guifg=NONE"
@@ -72,7 +73,7 @@ M.apply = function()
 	M.apply_term_colors(colors)
 
 	-- highlight(Group, Foreground, Backgroud, Attribute, Special)
-	if(vim.g.dracula_transparent_bg == true) then
+	if(vim.g.minimalmistakes_transparent_bg == true) then
 		highlight("Normal", colors.fg, nil, nil, nil)
 	else
 		highlight("Normal", colors.fg, colors.bg, nil, nil)
@@ -116,7 +117,7 @@ M.apply = function()
 	highlight("CursorColumn", nil, colors.black, "reverse", nil)
 	highlight("CursorLineNr", colors.fg, nil, "bold", nil)
 
-	if(vim.g.dracula_transparent_bg == true)then
+	if(vim.g.minimalmistakes_transparent_bg == true)then
 		highlight("SignColumn", nil, nil, nil, nil)
 	else
 		highlight("SignColumn", nil, colors.bg, nil, nil)
@@ -170,7 +171,7 @@ M.apply = function()
 	highlight("WarningMsg", colors.yellow, nil, nil, nil)
 	highlight("WildMenu", colors.black, colors.white, nil, nil)
 
-	if(vim.g.dracula_show_end_of_buffer == true) then
+	if(vim.g.minimalmistakes_show_end_of_buffer == true) then
 		highlight("EndOfBuffer", colors.visual, nil, nil, nil)
 	else
 		highlight("EndOfBuffer", colors.bg, nil, nil, nil)
@@ -311,7 +312,7 @@ M.apply = function()
 	highlight("TelescopePromptPrefix", colors.purple, nil, nil, nil)
 
 	-- NvimTree
-	if(vim.g.dracula_transparent_bg == true) then
+	if(vim.g.minimalmistakes_transparent_bg == true) then
 		highlight("NvimTreeNormal ", colors.fg, nil, nil, nil)
 		highlight("NvimTreeVertSplit", nil, nil, nil, nil)
 	else
@@ -331,7 +332,7 @@ M.apply = function()
 	highlight("NvimTreeCursorLine", nil, colors.selection, nil, nil)
 	highlight("NvimTreeIn", nil, colors.selection, nil, nil)
 
-	if(vim.g.dracula_show_end_of_buffer == true) then
+	if(vim.g.minimalmistakes_show_end_of_buffer == true) then
 		highlight("NvimTreeEndOfBuffer", colors.visual, nil, nil, nil)
 	else
 		highlight("NvimTreeEndOfBuffer", colors.bg, nil, nil, nil)

@@ -1,4 +1,4 @@
-local dracula = require("dracula")
+local minimalmistakes = require("minimalmistakes")
 
 vim.cmd("hi clear")
 
@@ -8,6 +8,6 @@ end
 
 vim.o.background = "dark"
 vim.o.termguicolors = true
-vim.g.colors_name = "dracula"
+vim.g.colors_name = "minimalmistakes"
 
-dracula.apply();
+minimalmistakes.apply();
