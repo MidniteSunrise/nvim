@@ -1,16 +1,16 @@
-### [vim](https://www.vim.org/) or [neovim](https://neovim.io/)
+### [neovim](https://neovim.io/)
 
 #### Install
 
-Download using the [GitHub .zip](https://github.com/Minimal-Mistakes/vim/archive/main.zip) download option
+Download using the [GitHub .zip](https://github.com/Minimal-Mistakes/nvim/archive/main.zip) download option
 
 #### Install using Git
 
 If you are a git user, you can install the theme and keep up to date by cloning the repo:
 
 ```
-git clone https://github.com/Minimal-Mistakes/vim.git ~/.cache/vim/
-cp -r ~/.cache/vim/colors.conf ~/.config/vim/colors.conf
+git clone https://github.com/Minimal-Mistakes/nvim.git ~/.cache/nvim/
+cp -r ~/.cache/nvim/colors.conf ~/.config/nvim/colors.conf
 ```
 
 add `include colors.conf` to the top of `~/.config/vim/vim.conf`

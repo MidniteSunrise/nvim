@@ -6,7 +6,7 @@
 
 ## Install
 
-All instructions can be found at [minimal-mistakes/vim](https://minimalmistakes.org/apps/code-editors/nvim).
+All instructions can be found at [minimal-mistakes/nvim](https://minimalmistakes.org/apps/code-editors/nvim).
 
 ## Team
 
